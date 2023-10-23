@@ -60,12 +60,18 @@ while starLine + 1 > line :
 inputNumList = input("숫자 여러 개 입력 ")
 inputNumList = inputNumList.split(" ")
 print(inputNumList)
+
+# list 안의 모든 숫자를 int화 한다
 numList = list(map(int, inputNumList))
+
 print(f"가장 큰 값 : {max(numList)}")
 print(f"가장 작은 값 : {min(numList)}")
+
+# max값과 min값을 찾아 지운다
 numList.remove(max(numList))
 numList.remove(min(numList))
 print(numList)
+
 avg = 0.0
 avgCount = 0
 for i in numList :
@@ -74,5 +80,5 @@ for i in numList :
 
 avg = float(avg/avgCount)
 
-print(f"나머지 값의 평균 값 : {avg}, {avgCount}")
-    
+print(f"나머지 값의 평균 값 : {avg}")
+# print(f"나머지 값의 평균 값 : {sum(numList)/len(numList)}") sum 함수와 len 함수를 활용하면 for문을 사용하지 않아도 됨
