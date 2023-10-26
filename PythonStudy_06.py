@@ -269,3 +269,19 @@ class Monster(Creature) :
         
     def _die(self):
         pass
+    
+    
+# 실습6
+class Animal :
+    def PlaySound(self) :
+        print("나의 울음 소리는~", end = '')
+        
+        
+class Dog(Animal) :
+    def PlaySound(self):
+        super().PlaySound()
+        print("RR")
+        
+        
+pero = Dog()
+pero.PlaySound()
