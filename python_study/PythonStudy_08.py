@@ -24,7 +24,7 @@ def practice_1() :
     
     # 이미 파일이 존재하면 내용을 다 날린다
     if file_path.exists() :
-            file = open("./memberInfo.txt", "w")
+            file = open("./memberInfo.txt", "w", encoding='EUC-KR')
             file.write('')
             file.close()
             
@@ -33,18 +33,18 @@ def practice_1() :
         password = input("암호 : ")
 
         if file_path.exists() :
-            file = open("./memberInfo.txt", "a")
+            file = open("./memberInfo.txt", "a", encoding='EUC-KR')
             file.write(f"{name}, {password}\n")
             file.close()
         else :
-            file = open("./memberInfo.txt", "w")
+            file = open("./memberInfo.txt", "w", encoding='EUC-KR')
             file.write(f"{name}, {password}\n")
             file.close()
             
         members += 1
     '''
     
-    file = open("./memberInfo.txt", "r")
+    file = open("./memberInfo.txt", "r", encoding='EUC-KR')
     member_info = file.readlines()
     # 사용자들 이름, 비밀번호를 한 줄로 저장
     member_info = [i.strip() for i in member_info]
@@ -72,7 +72,7 @@ def practice_1() :
         member_tel_path = Path("member_tel.txt")
         
         if member_tel_path.exists() :
-            file = open("./member_tel.txt", "r")
+            file = open("./member_tel.txt", "r", encoding='EUC-KR')
             members_tel_info = file.readlines()
             file.close()
             
@@ -88,22 +88,21 @@ def practice_1() :
             
             # 사용자 이름이 이미 존재하는 경우(수정)
             if memberExist :
-                with open("./member_tel.txt", "r+") as file :
+                with open("./member_tel.txt", "w", encoding='EUC-KR') as file :
                     # 한 번 싹 날리고
                     file.write('')
-                    file.seek(0, 2)
                     # 갱신한 데이터 삽입
                     for i in members_tel_info :
                         file.write(i)
                 
             # 신규 사용자의 경우
             else :
-                with open("./member_tel.txt", "a") as file :
+                with open("./member_tel.txt", "a", encoding='EUC-KR') as file :
                     file.write(f"{input_name}, {tel_num}\n")
         
         # 파일이 없는 경우 그냥 새로 기록
         else :
-            with open("./member_tel.txt", "w") as file :
+            with open("./member_tel.txt", "w", encoding='EUC-KR') as file :
                 file.write(f"{input_name}, {tel_num}\n")
             
 def main() :
