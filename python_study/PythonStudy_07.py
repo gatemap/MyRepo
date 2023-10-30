@@ -1,4 +1,4 @@
-import calc_module
+import python_study.calc_module as calc_module
 
 def modulePractice() :
 
