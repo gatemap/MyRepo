@@ -12,12 +12,12 @@ app.layout = html.Div([
     dcc.Graph(id='graph-content')
 ])
 
+
+# dropdown으로 나라를 변경해준 값마다 callback을 기반으로 그래프를 갱신해준다
 @callback(
     Output('graph-content', 'figure'),
     Input('dropdown-selection', 'value')
 )
-
-# dropdown으로 나라를 변경해준 값마다 callback을 기반으로 그래프를 갱신해준다
 def update_graph(value) : 
     dff = df[df.country == value]
     return px.line(dff, x='year', y='pop')
