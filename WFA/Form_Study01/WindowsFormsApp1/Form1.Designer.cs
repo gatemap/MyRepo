@@ -35,6 +35,9 @@
             this.subButton = new System.Windows.Forms.Button();
             this.multiButton = new System.Windows.Forms.Button();
             this.divideButton = new System.Windows.Forms.Button();
+            this.button_hello = new System.Windows.Forms.Button();
+            this.textBox_input = new System.Windows.Forms.TextBox();
+            this.button_input = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox_print
@@ -45,8 +48,6 @@
             this.textBox_print.Name = "textBox_print";
             this.textBox_print.Size = new System.Drawing.Size(321, 226);
             this.textBox_print.TabIndex = 0;
-            this.textBox_print.Text = " ";
-            this.textBox_print.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // numBox2
             // 
@@ -54,7 +55,6 @@
             this.numBox2.Name = "numBox2";
             this.numBox2.Size = new System.Drawing.Size(154, 25);
             this.numBox2.TabIndex = 1;
-            this.numBox2.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // numBox1
             // 
@@ -71,7 +71,7 @@
             this.addButton.TabIndex = 4;
             this.addButton.Text = "+";
             this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.button2_Click);
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // subButton
             // 
@@ -103,11 +103,41 @@
             this.divideButton.UseVisualStyleBackColor = true;
             this.divideButton.Click += new System.EventHandler(this.divideButton_Click);
             // 
+            // button_hello
+            // 
+            this.button_hello.Location = new System.Drawing.Point(34, 469);
+            this.button_hello.Name = "button_hello";
+            this.button_hello.Size = new System.Drawing.Size(136, 41);
+            this.button_hello.TabIndex = 8;
+            this.button_hello.Text = "안녕하세요!";
+            this.button_hello.UseVisualStyleBackColor = true;
+            this.button_hello.Click += new System.EventHandler(this.button_hello_Click);
+            // 
+            // textBox_input
+            // 
+            this.textBox_input.Location = new System.Drawing.Point(416, 28);
+            this.textBox_input.Name = "textBox_input";
+            this.textBox_input.Size = new System.Drawing.Size(301, 25);
+            this.textBox_input.TabIndex = 9;
+            // 
+            // button_input
+            // 
+            this.button_input.Location = new System.Drawing.Point(416, 71);
+            this.button_input.Name = "button_input";
+            this.button_input.Size = new System.Drawing.Size(136, 41);
+            this.button_input.TabIndex = 10;
+            this.button_input.Text = "Input";
+            this.button_input.UseVisualStyleBackColor = true;
+            this.button_input.Click += new System.EventHandler(this.button_input_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 562);
+            this.Controls.Add(this.button_input);
+            this.Controls.Add(this.textBox_input);
+            this.Controls.Add(this.button_hello);
             this.Controls.Add(this.divideButton);
             this.Controls.Add(this.multiButton);
             this.Controls.Add(this.subButton);
@@ -133,6 +163,9 @@
         private System.Windows.Forms.Button subButton;
         private System.Windows.Forms.Button multiButton;
         private System.Windows.Forms.Button divideButton;
+        private System.Windows.Forms.Button button_hello;
+        private System.Windows.Forms.TextBox textBox_input;
+        private System.Windows.Forms.Button button_input;
     }
 }
 

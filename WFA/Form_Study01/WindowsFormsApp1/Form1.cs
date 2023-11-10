@@ -8,35 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MyMath;
+
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        List<int> numList = new List<int>();
+        enum Operateor
+        {
+            Add, Sub, Mult, Divide
+        }
+        decimal num1 = 0, num2 = 0;
+
+        Calculate.calcData calcData;
+        Calculate calc;
+
         public Form1()
         {
             InitializeComponent();
-
-            //MessageBox.Show("Hellow, world!");
-
-            //textBox_print.Text = "멀티\r\n라인\r\n텍스트박스\r\n입니다.";
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int n = 0;
-
-            if (int.TryParse(numBox2.Text, out n))
-                textBox_print.Text = (n + 100).ToString();
-            else
-                MessageBox.Show("숫자를 입력하세요.");
-
-            //textBox_print.Text = textInputBox.Text;
+            // 초기화
+            num1 = 0;
+            num2 = 0;
+            textBox_print.Clear();
+            calc = new Calculate();
+            calcData = new Calculate.calcData();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,89 +39,120 @@ namespace WindowsFormsApp1
 
         }
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        
+        private void addButton_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        void Calculation(string fom)
-        {
-            int num = 0;
-
-            if(int.TryParse(fom, out num))
-            {
-                textBox_print.Text = num.ToString() + "\r\n";
-                numList.Add(num);
-            }
-            else
-            {
-                // 숫자보다 연산자가 먼저 들어온 경우
-                if(numList.Count < 1)
-                {
-                    MessageBox.Show("Error! 입력된 숫자가 없습니다");
-                    return;
-                }
-
-                switch (fom)
-                {
-                    case "+":
-                        textBox_print.Text += fom + "\r\n";
-                        break;
-                    case "-":
-                        textBox_print.Text += fom + "\r\n";
-                        break;
-                    case "*":
-                        textBox_print.Text += fom + "\r\n";
-                        break;
-                    case "/":
-                        textBox_print.Text += fom + "\r\n";
-                        break;
-                    case "=":
-
-                        break;
-                    default:
-                        MessageBox.Show("Error! 연산자 에러");
-                        break;
-                }
-            }
-
-
-            if(fom.Contains('+') || fom.Contains('-') || fom.Contains('*') || fom.Contains('/'))
-            {
-                string oper = fom.Contains('+') ? "+" : fom.Contains('-') ? "-" : fom.Contains('*') ? "*" : fom.Contains('/') ? "/" : string.Empty;
-                
-                // 사칙연산 이외의 연산자는 반환 처리
-                if(string.IsNullOrEmpty(oper))
-                {
-                    
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Error! 연산자가 입력되지 않았습니다.");
-                numBox2.Text = string.Empty;
-            }    
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+            if (CalcBeforeParsing())
+                PrintCalcResut(Operateor.Add);
         }
 
         private void subButton_Click(object sender, EventArgs e)
         {
-
+            if (CalcBeforeParsing())
+                PrintCalcResut(Operateor.Sub);
         }
 
         private void multiButton_Click(object sender, EventArgs e)
         {
-
+            if (CalcBeforeParsing())
+                PrintCalcResut(Operateor.Mult);
         }
 
         private void divideButton_Click(object sender, EventArgs e)
         {
+            if (CalcBeforeParsing())
+            {
+                if(num2 == 0)
+                {
+                    MessageBox.Show("Error!0으로는 나눌 수 없습니다.");
+                    numBox2.Clear();
+                    return;
+                }
 
+                PrintCalcResut(Operateor.Divide);
+            }
+        }
+
+        /// <summary>
+        /// 계산 전 숫자 파싱체크하려는 함수
+        /// </summary>
+        /// <returns></returns>
+        bool CalcBeforeParsing()
+        {
+            if (decimal.TryParse(numBox1.Text, out num1) && decimal.TryParse(numBox2.Text, out num2))   
+                return true;
+            else
+            {
+                MessageBox.Show("Error! 숫자가 아닙니다.");
+                numBox1.Clear();
+                numBox2.Clear();
+                return false;
+            }
+        }
+
+        private void button_hello_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Olla");
+        }
+
+        private void button_input_Click(object sender, EventArgs e)
+        {
+            //
+            //textBox_print.Text += textBox_input.Text + "\r\n";
+            //textBox_input.Clear();
+            
+            // 구조체를 쓰려는 강제적인 변환. 식을 한번에 받기 때문에 필요한 작업
+            List<decimal> nums = new List<decimal>();
+            nums = calc.CalcFormInNum(textBox_input.Text, calc.FindOperator(textBox_input.Text));
+            calcData.num1 = nums[0];
+            calcData.num2 = nums[1];
+
+            // 연산자가 +,-,/,*,% 이외의 것이 들어오면 \0이 들어가도록 했으므로 연산자 오류 메시지 박스를 띄우도록 한다
+            if (calc.FindOperator(textBox_input.Text).Equals('\0'))
+                MessageBox.Show("연산자 오류!");
+            else
+                calcData.operate = calc.FindOperator(textBox_input.Text);
+
+            // 반환 값에 Error가 포함되어 있으면 오류 메시지 박스를 띄우도록 한다
+            if(calc.CalculateComplete(calcData).Contains("Error"))
+                MessageBox.Show($"{calc.CalculateComplete(calcData)}");
+            else
+                textBox_print.Text = calc.CalculateComplete(calcData);
+
+            textBox_input.Clear();
+        }
+
+
+        /// <summary>
+        /// 사칙연산 결과를 output 하는 함수
+        /// </summary>
+        /// <param name="oper"></param>
+        void PrintCalcResut(Operateor oper)
+        {
+            string operation = string.Empty;
+            decimal result = 0;
+
+            switch (oper)
+            {
+                case Operateor.Add:
+                    operation = "+";
+                    result = num1 + num2;
+                    break;
+                case Operateor.Sub:
+                    operation = "-";
+                    result = num1 - num2;
+                    break;
+                case Operateor.Mult:
+                    operation = "*";
+                    result = num1 * num2;
+                    break;
+                case Operateor.Divide:
+                    operation = "/";
+                    result = num1 / num2;
+                    break;
+            }
+            
+            textBox_print.Text = string.Format("{0} {1} {2} = {3}\r\n계산 완료", num1, operation, num2, result);
         }
     }
 }
