@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,6 +18,9 @@ namespace WindowsFormsApp1
         Calculate.calcData calcData;
         Calculate calc;
 
+        Rifle gun;
+        Knife knife;
+
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +30,11 @@ namespace WindowsFormsApp1
             textBox_print.Clear();
             calc = new Calculate();
             calcData = new Calculate.calcData();
+            
+            gun = new Rifle(30);
+            knife = new Knife(100);
+            gun.CombatPoint(30, 100);
+            knife.CombatPoint(300, 10);
         }
 
         private void Form1_Load(object sender, EventArgs e)
