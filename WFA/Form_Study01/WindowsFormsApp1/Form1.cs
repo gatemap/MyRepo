@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using MyMath;
+using WindowsFormsApp1.Exception_study;
 
 namespace WindowsFormsApp1
 {
@@ -21,6 +22,8 @@ namespace WindowsFormsApp1
         Rifle gun;
         Knife knife;
 
+        ExceptionTest test;
+
         public Form1()
         {
             InitializeComponent();
@@ -28,13 +31,22 @@ namespace WindowsFormsApp1
             num1 = 0;
             num2 = 0;
             textBox_print.Clear();
+            /*
             calc = new Calculate();
             calcData = new Calculate.calcData();
-            
+            */
+
+            /*
             gun = new Rifle(30);
             knife = new Knife(100);
             gun.CombatPoint(30, 100);
             knife.CombatPoint(300, 10);
+            */
+
+            test = new ExceptionTest();
+            test.ConvertNum();
+
+            textBox_print.Text = test.textMessage;
         }
 
         private void Form1_Load(object sender, EventArgs e)
