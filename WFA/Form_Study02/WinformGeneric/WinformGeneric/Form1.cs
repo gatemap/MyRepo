@@ -58,7 +58,7 @@ namespace WinformGeneric
 
             while(true)
             {
-                Thread.Sleep(100);
+                Thread.Sleep(500);
                 foreach(RacingCar car in cars)
                 {
                     if (!car.racingEnd)

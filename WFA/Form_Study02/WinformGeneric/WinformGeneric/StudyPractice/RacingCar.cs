@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinformGeneric.StudyPractice
@@ -25,8 +23,9 @@ namespace WinformGeneric.StudyPractice
         public void RacingStart(TextBox box)
         {
             // 랜덤 시드값이 cpu 클락값에 따라 들어가서 한번 씩 쉬어준다
-            Thread.Sleep(150);
-            Random rand = new Random();
+            //Thread.Sleep(150);
+            // 이렇게 작성하면 매번 다른 값을 받아올 수 있다고 함
+            Random rand = new Random(Guid.NewGuid().GetHashCode());
             // 한 단위 움직이는 간격
             delaySecond = (decimal)(rand.Next(1, 11) * 0.1);
 
