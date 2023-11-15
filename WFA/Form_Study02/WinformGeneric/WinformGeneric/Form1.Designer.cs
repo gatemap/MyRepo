@@ -42,6 +42,7 @@
             this.userData.Multiline = true;
             this.userData.Name = "userData";
             this.userData.ReadOnly = true;
+            this.userData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.userData.Size = new System.Drawing.Size(284, 340);
             this.userData.TabIndex = 5;
             // 
