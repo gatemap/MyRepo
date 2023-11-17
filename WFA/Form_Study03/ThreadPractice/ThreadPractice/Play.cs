@@ -69,6 +69,7 @@ namespace ThreadPractice
             if (!thread.IsAlive || progressBar.Value >= 100)
                 return;
 
+            // form 끼리 직접 접근이 되지 않기 때문에 Invoke로 간접적으로 통신하기 위해서 사용함
             Invoke(new Action(delegate ()
             {
                 thread.Abort();
