@@ -31,6 +31,7 @@
             this.playerNameLabel = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.progressLabel = new System.Windows.Forms.Label();
+            this.giveUpButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // playerNameLabel
@@ -44,7 +45,7 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(15, 27);
+            this.progressBar.Location = new System.Drawing.Point(15, 35);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(373, 23);
             this.progressBar.TabIndex = 1;
@@ -58,11 +59,22 @@
             this.progressLabel.TabIndex = 2;
             this.progressLabel.Text = "진행 상황 표시 : 0%";
             // 
+            // giveUpButton
+            // 
+            this.giveUpButton.Location = new System.Drawing.Point(166, 5);
+            this.giveUpButton.Name = "giveUpButton";
+            this.giveUpButton.Size = new System.Drawing.Size(75, 23);
+            this.giveUpButton.TabIndex = 3;
+            this.giveUpButton.Text = "포기";
+            this.giveUpButton.UseVisualStyleBackColor = true;
+            this.giveUpButton.Click += new System.EventHandler(this.giveUpButton_Click);
+            // 
             // Play
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 60);
+            this.ClientSize = new System.Drawing.Size(400, 70);
+            this.Controls.Add(this.giveUpButton);
             this.Controls.Add(this.progressLabel);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.playerNameLabel);
@@ -81,5 +93,6 @@
         private System.Windows.Forms.Label playerNameLabel;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label progressLabel;
+        private System.Windows.Forms.Button giveUpButton;
     }
 }

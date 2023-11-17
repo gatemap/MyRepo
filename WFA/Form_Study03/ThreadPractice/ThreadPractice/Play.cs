@@ -20,6 +20,7 @@ namespace ThreadPractice
 
             playerNameLabel.Text = playerName = name;
             rank = rank > 1 ? 1 : rank;
+            giveUpButton.Enabled = true;
         }
 
         public void ThreadStart()
@@ -62,5 +63,18 @@ namespace ThreadPractice
             rank++;
         }
 
+        private void giveUpButton_Click(object sender, EventArgs e)
+        {
+            // 스레드가 살아있지 않거나, 이미 바가 100인 경우 암것도 안함
+            if (!thread.IsAlive || progressBar.Value >= 100)
+                return;
+
+            Invoke(new Action(delegate ()
+            {
+                thread.Abort();
+                eventMessage(this, "포기함! (Thread Stop)");
+                giveUpButton.Enabled = false;
+            }));
+        }
     }
 }

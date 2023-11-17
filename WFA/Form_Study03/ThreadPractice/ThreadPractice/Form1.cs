@@ -55,19 +55,16 @@ namespace ThreadPractice
 
         void ThreadResultAdd(object sender, string result)
         {
-            if (InvokeRequired)
+            Invoke(new Action(delegate ()
             {
-                Invoke(new Action(delegate ()
-                {
-                    Play play = sender as Play;
+                Play play = sender as Play;
 
-                    // 만약 null값이 들어오면 함수 강종
-                    if (play == null)
-                        return;
+                // 만약 null값이 들어오면 함수 강종
+                if (play == null)
+                    return;
 
-                    resultListBox.Items.Add($"Player : {play.playerName}, Result : {result}");
-                }));
-            }
+                resultListBox.Items.Add($"Player : {play.playerName}, Result : {result}");
+            }));
         }
     }
 }
