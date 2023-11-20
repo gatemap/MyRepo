@@ -32,5 +32,22 @@ namespace WpfStudy01
             else if (GoodbyeButton.IsChecked == true)
                 MessageBox.Show("Goodbye.");
         }
+
+        private void Button_Click_ResourceLoad(object sender, RoutedEventArgs e)
+        {
+            ImageSource currentImage = testImage.Source;
+
+            Uri source = new Uri(@"/WpfStudy01;component/Resources/감사콩.jpg", UriKind.Relative);
+            ImageSource nextImage = new BitmapImage(source);
+
+            if(!currentImage.Equals(nextImage))
+            {
+                testImage.Source = nextImage;
+                nextImage = currentImage;
+                currentImage = testImage.Source;
+            }
+
+            // testImage.Source = new BitmapImage(source);
+        }
     }
 }
