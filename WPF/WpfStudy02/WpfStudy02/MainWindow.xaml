@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfStudy02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfStudy02"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Open csv" HorizontalAlignment="Left" VerticalAlignment="Top" MinWidth="100" MinHeight="30" Margin="20,15,0,0" Click="Button_Click_OpenCsvFile"/>
+        <DataGrid x:Name="personDataList" MinHeight="200" Margin="0,60,0,60" MaxHeight="400" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="이름" Binding="{Binding Path=name}" Width="100"/>
+                <DataGridTextColumn Header="나이" Binding="{Binding Path=age}" Width="70"/>
+                <DataGridTextColumn Header="설명" Binding="{Binding Path=note}" Width="300"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="filePathLabel" Content="FilePath" HorizontalAlignment="Left" Margin="145,17,0,0" VerticalAlignment="Top" MinWidth="150" MinHeight="30"/>
+        <Button Content="Get Data" HorizontalAlignment="Right" VerticalAlignment="Top" MinWidth="100" MinHeight="30" Margin="0,15,20,0" Click="Button_Click_GetData"/>
+
+    </Grid>
+</Window>

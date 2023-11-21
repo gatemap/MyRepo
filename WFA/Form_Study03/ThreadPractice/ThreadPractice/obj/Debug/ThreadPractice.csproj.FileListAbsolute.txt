@@ -1,0 +1,11 @@
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study03\ThreadPractice\ThreadPractice\bin\Debug\ThreadPractice.exe.config
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study03\ThreadPractice\ThreadPractice\bin\Debug\ThreadPractice.exe
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study03\ThreadPractice\ThreadPractice\bin\Debug\ThreadPractice.pdb
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study03\ThreadPractice\ThreadPractice\obj\Debug\ThreadPractice.csproj.AssemblyReference.cache
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study03\ThreadPractice\ThreadPractice\obj\Debug\ThreadPractice.Form1.resources
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study03\ThreadPractice\ThreadPractice\obj\Debug\ThreadPractice.Play.resources
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study03\ThreadPractice\ThreadPractice\obj\Debug\ThreadPractice.Properties.Resources.resources
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study03\ThreadPractice\ThreadPractice\obj\Debug\ThreadPractice.csproj.GenerateResource.cache
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study03\ThreadPractice\ThreadPractice\obj\Debug\ThreadPractice.csproj.CoreCompileInputs.cache
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study03\ThreadPractice\ThreadPractice\obj\Debug\ThreadPractice.exe
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study03\ThreadPractice\ThreadPractice\obj\Debug\ThreadPractice.pdb

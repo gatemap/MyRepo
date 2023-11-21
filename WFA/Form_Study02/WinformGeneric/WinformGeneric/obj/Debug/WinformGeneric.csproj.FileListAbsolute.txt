@@ -1,0 +1,10 @@
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study02\WinformGeneric\WinformGeneric\bin\Debug\WinformGeneric.exe.config
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study02\WinformGeneric\WinformGeneric\bin\Debug\WinformGeneric.exe
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study02\WinformGeneric\WinformGeneric\bin\Debug\WinformGeneric.pdb
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study02\WinformGeneric\WinformGeneric\obj\Debug\WinformGeneric.csproj.AssemblyReference.cache
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study02\WinformGeneric\WinformGeneric\obj\Debug\WinformGeneric.GenericStudy.resources
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study02\WinformGeneric\WinformGeneric\obj\Debug\WinformGeneric.Properties.Resources.resources
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study02\WinformGeneric\WinformGeneric\obj\Debug\WinformGeneric.csproj.GenerateResource.cache
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study02\WinformGeneric\WinformGeneric\obj\Debug\WinformGeneric.csproj.CoreCompileInputs.cache
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study02\WinformGeneric\WinformGeneric\obj\Debug\WinformGeneric.exe
+C:\Users\space\Desktop\MyRepo\WFA\Form_Study02\WinformGeneric\WinformGeneric\obj\Debug\WinformGeneric.pdb

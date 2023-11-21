@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace WpfStudy01
 {
@@ -20,9 +11,27 @@ namespace WpfStudy01
     /// </summary>
     public partial class MainWindow : Window
     {
+        ImageSource currentImage;
+        ImageSource nextImage;
+
+        Uri source;
+        Uri buttonSource;
+
+
         public MainWindow()
         {
             InitializeComponent();
+
+            currentImage = testImage.Source;
+
+            source = new Uri(@"/WpfStudy01;component/Resources/감사콩.jpg", UriKind.Relative);
+            nextImage = new BitmapImage(source);
+
+            buttonSource = new Uri(@"pack://application:,,,/Resources/love.png", UriKind.Absolute);
+            BitmapImage image = new BitmapImage(buttonSource);
+            changeButton.Background = new ImageBrush(new BitmapImage(buttonSource));
+            changeButton.Width = image.PixelWidth;
+            changeButton.Height = image.PixelHeight;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,19 +44,27 @@ namespace WpfStudy01
 
         private void Button_Click_ResourceLoad(object sender, RoutedEventArgs e)
         {
-            ImageSource currentImage = testImage.Source;
-
-            Uri source = new Uri(@"/WpfStudy01;component/Resources/감사콩.jpg", UriKind.Relative);
-            ImageSource nextImage = new BitmapImage(source);
-
             if(!currentImage.Equals(nextImage))
             {
                 testImage.Source = nextImage;
                 nextImage = currentImage;
                 currentImage = testImage.Source;
             }
+        }
 
-            // testImage.Source = new BitmapImage(source);
+        private void Button_Click_ImageChange(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            // 이미지만 받아오도록 이미지 확장자 필터
+            fileDialog.Filter = "Image files (*.png 혹은 *.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
+
+            if (fileDialog.ShowDialog().Equals(true))
+            {
+                buttonSource = new Uri(fileDialog.FileName, UriKind.Absolute);
+                BitmapImage image = new BitmapImage(buttonSource);
+                changeButton.Background = new ImageBrush(new BitmapImage(buttonSource));
+                changeButton.Width = image.PixelWidth; changeButton.Height = image.PixelHeight;
+            }
         }
     }
 }

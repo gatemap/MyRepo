@@ -12,6 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Resources\love.png" />
+    <None Remove="Resources\png-clipart-buttons-buttons.png" />
     <None Remove="Resources\감사콩.jpg" />
     <None Remove="Resources\도망콩.gif" />
     <None Remove="Resources\방긋로아콘.jpg" />
@@ -23,6 +25,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </Resource>
+    <Resource Include="Resources\love.png" />
+    <Resource Include="Resources\png-clipart-buttons-buttons.png" />
     <Resource Include="Resources\감사콩.jpg" />
     <Resource Include="Resources\도망콩.gif" />
     <Resource Include="Resources\방긋로아콘.jpg" />

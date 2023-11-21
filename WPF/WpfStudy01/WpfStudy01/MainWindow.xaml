@@ -6,6 +6,26 @@
         xmlns:local="clr-namespace:WpfStudy01"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ControlTemplate x:Key="NoMouseOverButtonTemplate" TargetType="Button">
+            <Border Background="{TemplateBinding Background}"  
+      BorderBrush="{TemplateBinding BorderBrush}"  
+      BorderThickness="{TemplateBinding BorderThickness}">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  
+                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+            </Border>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled"  
+         Value="False">
+                    <Setter Property="Background"  
+          Value="{x:Static SystemColors.ControlLightBrush}" />
+                    <Setter Property="Foreground"  
+          Value="{x:Static SystemColors.GrayTextBrush}" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="252,47,0,0" TextWrapping="Wrap" Text="Select a message option and then choose the Display button." VerticalAlignment="Top"/>
         <RadioButton x:Name="HelloButton" Content="Hello" IsChecked="True" HorizontalAlignment="Left" Margin="297,161,0,0" VerticalAlignment="Top"/>
@@ -13,6 +33,11 @@
         <Button Content="Display" HorizontalAlignment="Left" Margin="377,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Image x:Name="testImage" HorizontalAlignment="Left" Height="200" Margin="557,202,0,0" VerticalAlignment="Top" Width="200" Source="/Resources/방긋로아콘.jpg"/>
         <Button HorizontalAlignment="Left" Margin="462,378,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click_ResourceLoad" Content="Show Picture"/>
+        <Button x:Name="changeButton" Content="Image Change" Click="Button_Click_ImageChange" BorderBrush="Transparent" Width="325" Height="145">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/love.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

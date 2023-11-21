@@ -63,6 +63,26 @@ namespace WpfStudy01 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] buttons_Image2 {
+            get {
+                object obj = ResourceManager.GetObject("buttons_Image2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] love {
+            get {
+                object obj = ResourceManager.GetObject("love", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] 감사콩 {
             get {
                 object obj = ResourceManager.GetObject("감사콩", resourceCulture);
