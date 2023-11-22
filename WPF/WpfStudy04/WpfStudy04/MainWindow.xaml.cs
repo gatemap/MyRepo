@@ -1,13 +1,5 @@
 ﻿using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfStudy04
 {
@@ -19,6 +11,13 @@ namespace WpfStudy04
         public MainWindow()
         {
             InitializeComponent();
+
+            List<Animal> animals = new List<Animal>();
+            animals.Add(new Animal("하마", 10));
+            animals.Add(new Animal("타조", 90));
+            animals.Add(new Animal("토끼", 50));
+
+            listBox.ItemsSource = animals;
         }
     }
 }
