@@ -7,19 +7,44 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="listBox" Margin="21,53,591,14">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="0,2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="100"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding name}"/>
-                        <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding percent}"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260*"/>
+            <ColumnDefinition Width="540*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="361*"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="buttonGrid" Grid.RowSpan="1">
+                <Button Margin="10,5,152,5" Content="Favorite" Padding="10,1,10,1" Width="90" Height="25" Click="Button_Click_Favorite"/>
+                <Button Margin="10,5,60,5" Content="←" Padding="10,1,10,1" Width="40" Height="25" HorizontalAlignment="Right" Click="Button_Click_Back"/>
+                <Button x:Name="forwardButton" Margin="10,5,10,5" Content="→" Padding="10,1,10,1" Width="40" Height="25" HorizontalAlignment="Right" IsEnabled="False" Click="Button_Click_Forward"/>
+            </Grid>
+            <Grid x:Name="radioGrid" Grid.RowSpan="2" Grid.Row="1">
+                <RadioButton x:Name="addRadioButton" Content="Add" HorizontalAlignment="Left" Margin="20,11,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <RadioButton x:Name="loadRadioButton" Content="Load" HorizontalAlignment="Left" Margin="85,11,0,0" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid Grid.RowSpan="3" Grid.Row="2">
+                <ListBox x:Name="listBox" Margin="15,15,15,15">
+                    
+                </ListBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="130*"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="urlGrid">
+                <TextBox x:Name="urlTextBox" HorizontalAlignment="Left" Margin="15,10,0,0" TextWrapping="Wrap" Text="https://" VerticalAlignment="Top" Width="420" Height="25" FontSize="16" Padding="5,0,0,0"/>
+                <Button Content="Move" Width="60" Height="25" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,15,0" Click="Button_Click_Move_Url"/>
+            </Grid>
+            <Grid x:Name="browserGrid" Grid.Row="1">
+                <WebBrowser x:Name="webBrowser" Margin="5,0,15,15"/>
+            </Grid>
+        </Grid>
+        
     </Grid>
 </Window>
