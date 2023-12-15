@@ -1,0 +1,24 @@
+﻿<Window x:Class="PLCStudy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLCStudy"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="dataLocation" HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="M"/>
+            <ComboBoxItem Content="R"/>
+            <ComboBoxItem Content="W"/>
+        </ComboBox>
+        <ComboBox x:Name="dataSize" HorizontalAlignment="Left" Margin="200,40,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="W"/>
+        </ComboBox>
+        <TextBox x:Name="offsetData" HorizontalAlignment="Left" Margin="40,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" PreviewTextInput="OffsetData_PreviewTextInput"/>
+        <Button Content="Connect" HorizontalAlignment="Left" Margin="359,40,0,0" VerticalAlignment="Top" Height="75" Width="159" Click="ConnectButton_Click"/>
+        <TextBlock x:Name="plcResult" HorizontalAlignment="Left" Margin="40,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="230" Width="280"/>
+    </Grid>
+</Window>
