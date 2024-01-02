@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "FvjP87CTB/V/mOzFSG8OjtLQOsxHuqTM3QLa35V0B8OJhmrceQwUUZl8CQhGpTdxt4bvw2Q6DRM+GgOK4oka/A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\space\\Desktop\\MyRepo\\WPF\\OpenCVStudy01\\OpenCVStudy01\\OpenCVStudy01.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\space\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\space\\.nuget\\packages\\opencvsharp4\\4.8.0.20230708\\opencvsharp4.4.8.0.20230708.nupkg.sha512",
+    "C:\\Users\\space\\.nuget\\packages\\opencvsharp4.runtime.win\\4.8.0.20230708\\opencvsharp4.runtime.win.4.8.0.20230708.nupkg.sha512",
+    "C:\\Users\\space\\.nuget\\packages\\opencvsharp4.wpfextensions\\4.8.0.20230708\\opencvsharp4.wpfextensions.4.8.0.20230708.nupkg.sha512",
+    "C:\\Users\\space\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\space\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\space\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
