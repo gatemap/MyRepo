@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBox x:Name="versionTextBox" HorizontalAlignment="Left" Margin="50,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Image x:Name="imageBox" HorizontalAlignment="Left" Height="250" Margin="50,108,0,0" VerticalAlignment="Top" Width="250"/>
 
     </Grid>
 </Window>

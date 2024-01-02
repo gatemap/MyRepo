@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OpenCVStudy01")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5eafe88787142cedb7594106ebe04cb5d6f82c1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("OpenCVStudy01")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OpenCVStudy01")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
