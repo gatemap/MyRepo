@@ -11,7 +11,7 @@ namespace PLCStudy
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly string plcIPAdress = "192.168.1.20:2004";
+        readonly string plcIPAdress = "192.168.1.33:2004";
 
         public MainWindow()
         {
@@ -57,7 +57,7 @@ namespace PLCStudy
             oCommDriver.AddDeviceInfo(oDevice);
 
             for (int i = 0; i < oDevice.lSize; i++)
-                bufWrite[i] = (byte)(i % 255);
+                bufWrite[i] = (byte)((i + 1) % 255);
 
             nTotal_len += oDevice.lSize;
 
