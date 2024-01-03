@@ -7,8 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="versionTextBox" HorizontalAlignment="Left" Margin="50,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Image x:Name="imageBox" HorizontalAlignment="Left" Height="250" Margin="50,108,0,0" VerticalAlignment="Top" Width="250"/>
+        <TextBox x:Name="versionTextBox" HorizontalAlignment="Left" Margin="50,25,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Image x:Name="originBox" HorizontalAlignment="Left" Height="150" Margin="50,78,0,0" VerticalAlignment="Top" Width="150"/>
+        <Image x:Name="convertBox1" HorizontalAlignment="Left" Height="150" Margin="220,78,0,0" VerticalAlignment="Top" Width="150"/>
+        <Image x:Name="convertBox2" HorizontalAlignment="Left" Height="150" Margin="390,78,0,0" VerticalAlignment="Top" Width="150"/>
+        <Image x:Name="convertBox3" HorizontalAlignment="Left" Height="150" Margin="560,78,0,0" VerticalAlignment="Top" Width="150"/>
+        <Image x:Name="convertBox4" HorizontalAlignment="Left" Height="150" Margin="50,248,0,0" VerticalAlignment="Top" Width="150"/>
+        <Image x:Name="convertBox5" HorizontalAlignment="Left" Height="150" Margin="220,248,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="vectorText" HorizontalAlignment="Right" Margin="0,30,30,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
