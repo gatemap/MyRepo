@@ -16,9 +16,10 @@ namespace OpenCVStudy01
 
             //PracticeImageConvert();
             //PracticeHistogram();
-            PracticeVector();
-            PracticePoint();
-            PracticeScalar();
+            //PracticeVector();
+            //PracticePoint();
+            //PracticeScalar();
+            PracticeRect();
         }
 
         void PracticeImageConvert()
@@ -120,6 +121,32 @@ namespace OpenCVStudy01
             vectorText.Text += s2.ToString() + "\r\n";
             vectorText.Text += s3.ToString() + "\r\n";
             vectorText.Text += "\r\n";
+        }
+
+        void PracticeRect()
+        {
+            OpenCvSharp.Rect rect1 = new OpenCvSharp.Rect(new OpenCvSharp.Point(0, 0), new OpenCvSharp.Size(640, 480));
+            OpenCvSharp.Rect rect2 = new OpenCvSharp.Rect(10, 10, 640, 480);
+
+            vectorText.Text = rect1.ToString() +"\r\n";
+            vectorText.Text += rect2.ToString() + "\r\n";
+        }
+
+        void PracticeMatrix()
+        {
+            // 640x480 크기 3ch(채널) 행렬
+            Mat m1 = new Mat(480, 640, MatType.CV_8UC3);
+            Mat m2 = new Mat(new OpenCvSharp.Size(640, 480), MatType.CV_8UC3);
+
+            Mat m = new Mat();
+
+            m.Create(MatType.CV_8UC3, new int[] { 640, 480 });
+            //m.Create(new OpenCvSharp.Size(640, 480), MatType.CV_8UC3);
+            //m.Create(480, 640, MatType.CV_8UC3);
+
+
+            // (255, 0, 0)으로 행렬의 모든 요소 초기화
+            m.SetTo(new Scalar(255, 0, 0));
         }
     }
 }
