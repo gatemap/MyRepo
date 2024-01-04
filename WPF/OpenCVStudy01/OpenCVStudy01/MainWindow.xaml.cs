@@ -140,7 +140,7 @@ namespace OpenCVStudy01
 
             Mat m = new Mat();
 
-            m.Create(MatType.CV_8UC3, new int[] { 640, 480 });
+            m.Create(MatType.CV_8UC3, new int[] { 480, 640 });
             //m.Create(new OpenCvSharp.Size(640, 480), MatType.CV_8UC3);
             //m.Create(480, 640, MatType.CV_8UC3);
 
